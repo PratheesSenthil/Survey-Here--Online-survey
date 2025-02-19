@@ -1,7 +1,7 @@
 .Surveys-page{
   /* background-color:bisque; */
   background-color: whitesmoke;
-
+  animation: fadeIn 0.8s ease-in-out;
   min-height: 100vh;
   /* margin-top: -22vh; */
   /* padding-top: 22vh; */
@@ -208,6 +208,14 @@ border: 1px solid rgb(255, 255, 255);
 .img-no{
   text-align: center;
 
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @media (max-width:768px){
   .get-start{

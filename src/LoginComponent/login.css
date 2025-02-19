@@ -45,7 +45,18 @@
   overflow: hidden;
   animation: fadeIn 0.8s ease-in-out;
 }
-
+.signup-container{
+  display: flex;
+  flex-direction: row;
+  background: white;
+  width: 75%;
+  height: 75vh;
+  max-width: 95%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
 .welcome-section {
   flex: 1;
   background:rgba(199, 169, 131, 0.463);

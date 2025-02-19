@@ -59,6 +59,18 @@ export default function Login() {
     } 
     
   };
+
+
+  // const signupinserver=()=>{
+  //   axios.post("http://127.0.0.1:3001/signup",{newEmail,newuser,newpassword})
+  //   .then(result=>console.log(result)
+  //  .catch(error){
+  //   console.error(error.)
+    
+  //  }
+  //   )
+  // }
+
   const handleSignIn=(event)=>{
     event.preventDefault();
     const modelEmail=/\S+@\S+\.\S+/;
@@ -82,7 +94,7 @@ export default function Login() {
       const userpass= newpassword;
       const emailId=newEmail;
       const newsignup={emailId,uname,userpass}
-      Signup.push(newsignup)
+      Signup.push(newsignup);
       console.log(Signup)
       setConPassword("");
       setnewpassword("");
@@ -159,7 +171,7 @@ export default function Login() {
               </p>
             </form>
           </div>
-        </div></>):(<><div className="login-container">
+        </div></>):(<><div className="signup-container">
         
         <div className="form-section">
           <form onSubmit={handleSignIn}>

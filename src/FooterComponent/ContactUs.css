@@ -7,6 +7,9 @@
     padding: 0 3vw; /* Reduced padding for mobile */
     /* text-align: center; */
 }
+.contactUs-page{
+    animation: fadeIn 0.8s ease-in-out;
+}
 
 .quote {
     color: crimson;
@@ -65,7 +68,15 @@ h3 {
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px;
 }
-
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+ 
 /* Tablet/Small Screen Adjustments */
 @media (min-width: 600px) {
     .contact-flex {

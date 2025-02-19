@@ -7,6 +7,9 @@ body {
   .nav{
     margin: 3vh;
   }
+  .Home-page{
+    animation: fadeIn 0.5s ease-in-out;
+  }
   .home-style{
     display: flex;
     flex-direction:row ;
@@ -16,6 +19,8 @@ body {
     padding-bottom: 9%;
     width: 100%;
   }
+
+
   .note-img{
     width: 36vw;
   }
@@ -169,7 +174,14 @@ body {
   .features-section h2{
     color:darkblue;
   }
-  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   @media (max-width:1024px){
     .home-img{
       display: none;
@@ -206,6 +218,7 @@ body {
       
     }
   }
+  
   
  
   
