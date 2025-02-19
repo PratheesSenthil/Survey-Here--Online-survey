@@ -1,0 +1,228 @@
+/* Default Styles (Mobile First) */
+.contact-flex {
+    display: flex;
+    flex-direction: column; /* Stack layout on smaller screens */
+    align-items: center;
+    justify-content: center;
+    padding: 0 3vw; /* Reduced padding for mobile */
+    /* text-align: center; */
+}
+
+.quote {
+    color: crimson;
+    text-align: center;
+    font-size: 24px; /* Smaller font size */
+    margin-top: 5vh;
+    margin-bottom: 0vh;
+    font-family:monospace;
+}
+.contit{
+    text-align: center;
+    /* border: 1px solid black; */
+    margin-left: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh; /* Reduced margin for smaller screens */
+    padding: 2vh 3vw; /* Smaller padding for compact design */
+    width: 100%;
+    align-items: center;
+}
+
+.contact-info > div {
+    width: 120%; /* Full width for mobile */
+    background:whitesmoke;
+    color: #25002f;
+    text-align: center;
+    margin-top: 1vh; /* Reduced margin */
+    border: 1px solid rgb(101, 100, 100);
+    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 8px; */
+    padding: 10px; /* Smaller padding */
+    border-radius: 8px;
+}
+
+h3 {
+    /* color: beige */
+    color: #25002f;
+    font-size: 14px; /* Smaller font size for headings */
+}
+
+.call {
+    margin-top: 0vh;
+}
+
+.contact-.image {
+    margin-top: 2vh; /* Reduced top margin */
+    text-align: center;
+}
+
+.image {
+    width: 80vw; /* Slightly larger for better display on mobile */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+}
+
+/* Tablet/Small Screen Adjustments */
+@media (min-width: 600px) {
+    .contact-flex {
+        flex-direction: row; /* Row layout for tablets */
+        justify-content: space-around;
+    }
+
+    .contact-info {
+        padding: 2vh 5vw; /* Adjusted smaller padding for tablets */
+    }
+
+    .contact-info > div {
+        width: 50%; /* Adjust width for tablets */
+    }
+
+    h3 {
+        font-size: 16px; /* Slightly larger font for tablets */
+    }
+
+    .image {
+        width: 40vw; /* Adjust image size for tablets */
+    }
+}
+
+/* Desktop Adjustments */
+
+
+/* Larger Screens / Extra Large Desktops */
+
+
+/* Extra Large Screens */
+
+
+
+
+
+@media (max-width:427px){
+    .contactUs-page{
+        margin-top: 30px;
+    }
+    .contact-info div{
+        width:300px;
+        margin-right: 20px;;
+    }
+    .quote{
+        font-size: 20px;
+        margin-right:20px;
+    }
+}
+@media (min-width:768px){
+    .contactUs-page{
+        margin-top: 30px;
+    }
+
+    .contact-info div{
+        width:300px;
+      
+    }
+    .contact-flex{
+        margin-bottom: 50px;
+    }
+}
+
+
+@media (min-width: 1027px) {
+    .contit{
+        margin-top: 20px;
+    }
+    .contact-flex {
+        flex-direction: row; /* Row layout for desktop */
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 180px;
+    }
+
+    .contact-info {
+        padding: 3vh 8vw; /* Adjusted padding for desktop */
+    }
+
+    .contact-info > div {
+        width: 500px; /* Adjust width for desktop */
+        padding: 15px; /* Adjusted padding */
+    }
+
+    h3 {
+        font-size: 18px; /* Slightly larger font for desktop */
+    }
+
+    .image {
+        margin-left: -60px;
+        width: 30vw;
+        height: 67vh; /* Adjusted image size for desktop */
+    }
+}
+@media (min-width: 1440px) {
+    .contact-info {
+        /* border: 1px solid black; */
+        margin-top: -15px; /* Increased padding for larger screens */
+    }
+
+    .contact-info > div {
+        width: 100%; /* Adjusted width for larger screens */
+        height: 100%;
+        
+    }
+
+    h3 {
+        font-size: 20px; /* Slightly larger font size for extra large screens */
+    }
+
+    .image {
+        width: 30vw; /* Slightly smaller image size for larger screens */
+        height: auto;
+        margin-bottom: 100px;
+        margin-top: 70px;
+    }
+}
+@media (min-width: 1920px) {
+    .contact-flex {
+        flex-direction: row; /* Row layout for large screens */
+        justify-content: space-between;
+    }
+
+    .contact-info {
+        padding: 5vh 15vw; /* Increased padding for very large screens */
+    }
+
+    .contact-info > div {
+        width: 22%; /* Adjusted width for very large screens */
+    }
+
+    h3 {
+        font-size: 22px; /* Larger font size for very large screens */
+    }
+
+    .image {
+        width: 15vw; /* Further reduced image size for very large screens */
+        height: auto;
+    }
+}
+@media (max-width:322px){
+    .quote{
+        font-size: 17px;
+        margin-left: 10px;
+    }
+    .contact-info div{
+        width:250px;
+        margin-right: 20px;;
+    }
+}
+@media (max-width:376px){
+    .quote{
+        font-size: 17px;
+        margin-left: 10px;
+    }
+    .contact-info div{
+        width:300px;
+        margin-right: 0px;;
+    }
+}
