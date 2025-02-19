@@ -1,4 +1,4 @@
-/* Default Styles (Mobile First) */
+
 body {
     background-color: whitesmoke;
     height: 100%;
@@ -21,7 +21,7 @@ body {
 
 .footer-flex {
     display: flex;
-    flex-direction: column; /* Changed for smaller screens */
+    flex-direction: column; 
     align-items: center;
     padding: 0 20px;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .image {
-    width: 65vw; /* Adjusted for mobile screens */
+    width: 65vw;
     height: 25vh;
 }
 
@@ -61,13 +61,12 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
 
 .Footer li {
     margin-top: 10px;
-    /* margin-left: 20px; */
+   
 }
 .learn-more{
     color: bisque;
-    /* margin-right: 20px; */
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    /* margin-left: -20px; */
+   
 }
 
 .Footer a {
@@ -116,7 +115,7 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
     color: bisque;
 }
 .name{
-    /* color: rgb(232, 38, 38); */
+
     color: bisque;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -126,25 +125,24 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
     text-decoration: none;
 }
 
-/* Tablet/Small Screen Adjustments */
 @media (min-width: 600px) {
     .footer-flex {
-        flex-direction: row; /* Row layout for tablets */
+        flex-direction: row;
         justify-content: space-between;
         padding: 0 40px;
     }
 
     .image {
-        width: 15vw; /* Adjusted for tablet */
+        width: 15vw;
         height: 15vh;
     }
 
     .socialLink>i {
-        padding-right: 15px; /* Reduced space for icons */
+        padding-right: 15px;
     }
 }
 
-/* Desktop Adjustments */
+
 @media (min-width: 1024px) {
     .footer-flex {
         padding: 0 60px;
@@ -160,11 +158,11 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
     }
 
     .bi-instagram {
-        font-size: 40px; /* Larger icon size for desktop */
+        font-size: 40px; 
     }
 }
 
-/* Larger Screens / Extra Large Desktops */
+
 @media (min-width: 1440px) {
     .footer-flex {
         padding: 0 100px;

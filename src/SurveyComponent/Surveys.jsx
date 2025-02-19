@@ -1,34 +1,31 @@
-
-import React, { useState, useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Surveys.css";
 import { Questions } from "./SurveyList";
 import ScrollToTop from '../HomeComponent/Scroll-top';
 
 export default function Surveys() {
   const [showSurvey, setSurvey] = useState(true);
-  const [quest, setQuest] = useState(null); // Current survey being taken
-  const [Opt, setOpt] = useState([]); // Track selected options
-  const [nosurvey,setnosurvey]=useState(false)
-  const [visibleQuestions, setVisibleQuestions] = useState(1); // Control visibility of questions
-  const questionRefs = useRef([]); // Refs for smooth scrolling
+  const [quest, setQuest] = useState(null);
+  const [Opt, setOpt] = useState([]);
+  const [nosurvey, setnosurvey] = useState(false);
+  const [visibleQuestions, setVisibleQuestions] = useState(1);
+  const questionRefs = useRef([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     const noSurveys = Questions.some(user => user.Surveys.length > 0);
-    if(!noSurveys){
+    if (!noSurveys) {
       setnosurvey(true);
     }
-  },[])
-  // Handles option selection for each question
+  }, []);
+
   const Options = (questionIndex, selectedOption) => {
     const newOptions = [...Opt];
     newOptions[questionIndex] = selectedOption;
     setOpt(newOptions);
 
-    // Reveal the next question
     setTimeout(() => {
-      setVisibleQuestions((prev) => Math.min(prev + 1, quest.questions.length));
+      setVisibleQuestions(prev => Math.min(prev + 1, quest.questions.length));
 
-      // Scroll to the next question
       setTimeout(() => {
         if (questionRefs.current[questionIndex + 1]) {
           questionRefs.current[questionIndex + 1].scrollIntoView({
@@ -40,11 +37,9 @@ export default function Surveys() {
     }, 100);
   };
 
-  // Submit the survey and update only the current survey's results
   const Submit = () => {
     setSurvey(true);
 
-    // Copy and update the current survey questions
     const updatedQuestions = quest.questions.map((question, index) => {
       const options = { ...question.options };
 
@@ -61,85 +56,92 @@ export default function Surveys() {
     console.log("Updated Survey Results:", updatedQuestions);
   };
 
-  // Open a selected survey
-  const Open = (ind,index) => {
+  const Open = (ind, index) => {
     setSurvey(false);
-    setQuest({ ...Questions[ind].Surveys[index] }); // Create a new object to prevent modifying original data
-    setOpt([]); // Reset selected options
-    setVisibleQuestions(1); // Reset to show only the first question
+    setQuest({ ...Questions[ind].Surveys[index] });
+    setOpt([]);
+    setVisibleQuestions(1);
   };
 
   return (
     <div className="Surveys-page">
       <div className="container">
         <center>
-          <h1 className="surveys-title" style={{color:"black"}}>SURVEYS</h1>
+          <h1 className="surveys-title" style={{ color: "black" }}>SURVEYS</h1>
           <h3 className="surveys-quote">Your opinions matter. Make them count!</h3>
         </center>
-        {nosurvey?(<div className="img-no"><img className="no-survey-img" src="/./no-survey-found.png" alt="no survey"/>
-        </div>):(<>{showSurvey ? (<>
-          <ScrollToTop />
-          <div className="survey-list">
-            {Questions.map((S, ind) => (
-              S.Surveys.map((q,index)=>(
-                <div key={index} className="survey-card">
-                <h5>{q.surveyTopic}</h5>
-                <img className="get-img"
-                  src="https://blogimage.vantagecircle.com/content/images/2019/04/blog-image-Employee-Engagement-Survey-01.png"
-                  alt="surveys"
-                  width={150}
-                  height={150}
-                  style={{ borderRadius: "10px" }}
-                />
-                <button className="get-start" onClick={() => Open(ind,index)}>
-                  Get Started
-                </button>
-              </div>
-              ))
-            ))}
+        {nosurvey ? (
+          <div className="img-no">
+            <img className="no-survey-img" src="/./no-survey-found.png" alt="no survey" />
           </div>
-          </>
         ) : (
-          <div className="survey-detail">
-            <ScrollToTop />
-            <h1 className="quest-title"><b>{quest.surveyTopic}</b></h1>
-            
-            {quest.questions.map((q, index) => (
-              <div
-                key={index}
-                className={`question-item ${index < visibleQuestions ? "visible" : "hidden"}`}
-                ref={(el) => (questionRefs.current[index] = el)}
-              >
-                <p style={{ color: "white", fontSize: "20px", marginTop: "10px" }}>{q.question}</p>
-                <hr style={{ border: "2px solid white" }} />
-                <div className="options-list">
-                  <button className={`option-button ${Opt[index] === 1 ? "selected" : ""}`}
-                    onClick={() => Options(index, 1)}>
-                    {q.options.option1.op1}
-                  </button>
-                  <button className={`option-button ${Opt[index] === 2 ? "selected" : ""}`}
-                    onClick={() => Options(index, 2)}>
-                    {q.options.option2.op2}
-                  </button>
-                  <button className={`option-button ${Opt[index] === 3 ? "selected" : ""}`}
-                    onClick={() => Options(index, 3)}>
-                    {q.options.option3.op3}
-                  </button>
-                  <button className={`option-button ${Opt[index] === 4 ? "selected" : ""}`}
-                    onClick={() => Options(index, 4)}>
-                    {q.options.option4.op4}
-                  </button>
+          <>
+            {showSurvey ? (
+              <>
+                <ScrollToTop />
+                <div className="survey-list">
+                  {Questions.map((S, ind) =>
+                    S.Surveys.map((q, index) => (
+                      <div key={index} className="survey-card">
+                        <h5>{q.surveyTopic}</h5>
+                        <img className="get-img"
+                          src="https://blogimage.vantagecircle.com/content/images/2019/04/blog-image-Employee-Engagement-Survey-01.png"
+                          alt="surveys"
+                          width={150}
+                          height={150}
+                          style={{ borderRadius: "10px" }}
+                        />
+                        <button className="get-start" onClick={() => Open(ind, index)}>
+                          Get Started
+                        </button>
+                      </div>
+                    ))
+                  )}
                 </div>
-              </div>
-            ))}
+              </>
+            ) : (
+              <div className="survey-detail">
+                <ScrollToTop />
+                <h1 className="quest-title"><b>{quest.surveyTopic}</b></h1>
 
-            {visibleQuestions === quest.questions.length && (
-              <button className="submit-but" onClick={Submit}>
-                Submit
-              </button>
+                {quest.questions.map((q, index) => (
+                  <div
+                    key={index}
+                    className={`question-item ${index < visibleQuestions ? "visible" : "hidden"}`}
+                    ref={el => (questionRefs.current[index] = el)}
+                  >
+                    <p style={{ color: "white", fontSize: "20px", marginTop: "10px" }}>{q.question}</p>
+                    <hr style={{ border: "2px solid white" }} />
+                    <div className="options-list">
+                      <button className={`option-button ${Opt[index] === 1 ? "selected" : ""}`}
+                        onClick={() => Options(index, 1)}>
+                        {q.options.option1.op1}
+                      </button>
+                      <button className={`option-button ${Opt[index] === 2 ? "selected" : ""}`}
+                        onClick={() => Options(index, 2)}>
+                        {q.options.option2.op2}
+                      </button>
+                      <button className={`option-button ${Opt[index] === 3 ? "selected" : ""}`}
+                        onClick={() => Options(index, 3)}>
+                        {q.options.option3.op3}
+                      </button>
+                      <button className={`option-button ${Opt[index] === 4 ? "selected" : ""}`}
+                        onClick={() => Options(index, 4)}>
+                        {q.options.option4.op4}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+
+                {visibleQuestions === quest.questions.length && (
+                  <button className="submit-but" onClick={Submit}>
+                    Submit
+                  </button>
+                )}
+              </div>
             )}
-          </div>
-        )}</>)}
+          </>
+        )}
       </div>
     </div>
   );

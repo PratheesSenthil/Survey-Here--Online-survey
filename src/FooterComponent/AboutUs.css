@@ -1,9 +1,8 @@
-/* Default Styles (Mobile First) */
 .AboutUs-page {
     padding-left: 5vw;
     padding-right: 5vw;
 }
-.abttit{
+.abttit {
     font-family: 'Times New Roman', Times, serif;
     margin-top: 20px;
     margin-right: 20px;
@@ -14,74 +13,59 @@
 p {
     color: black;
 }
-
 .whoweare, .Vision, .Mission, .chooseus, .Joinus {
     margin-right: 0;
-    margin-top: 5vh; /* Reduced margin for mobile */
-    /* Center-align content for small screens */
+    margin-top: 5vh;
 }
-
 h1 {
     color: black;
-    text-align: center; /* Center-align heading for smaller screens */
+    text-align: center;
 }
-
-/* Tablet/Small Screen Adjustments */
 @media (min-width: 600px) {
     .AboutUs-page {
         padding-left: 10vw;
         padding-right: 10vw;
     }
-
     .whoarewe, .Vision, .Mission, .chooseus, .Joinus {
-        margin-right: 15vw; /* Increased margin for tablet */
+        margin-right: 15vw;
         margin-top: 8vh;
-        text-align: left; /* Align content to left for tablets */
+        text-align: left;
     }
-
     h1 {
-        font-size: 24px; /* Slightly larger heading */
-        text-align: center; /* Center align on medium screens */
+        font-size: 24px;
+        text-align: center;
     }
 }
-@media(max-width:770px){
+@media (max-width: 770px) {
     .whoarewe, .Vision, .Mission, .chooseus, .Joinus {
         margin-right: 0vh;
         margin-top: 10vh;
-        text-align: left; /* Left-aligned text for desktop */
+        text-align: left;
     }
 }
-
-/* Desktop Adjustments */
 @media (min-width: 1024px) {
     .AboutUs-page {
         padding-left: 10vh;
         padding-right: 10vh;
     }
-
     .whoarewe, .Vision, .Mission, .chooseus, .Joinus {
         margin-right: 5vh;
         margin-top: 10vh;
-        text-align: left; /* Left-aligned text for desktop */
+        text-align: left;
     }
-
     h1 {
-        font-size: 28px; /* Larger heading size for desktop */
+        font-size: 28px;
     }
 }
-
-/* Larger Screens / Extra Large Desktops */
 @media (min-width: 1440px) {
     .AboutUs-page {
         padding-left: 15vh;
         padding-right: 5vh;
     }
-
     .whoarewe, .Vision, .Mission, .chooseus, .Joinus {
-        margin-right: 5vh; /* Increased margin for larger screens */
+        margin-right: 5vh;
     }
-
     h1 {
-        font-size: 32px; /* Even larger heading for extra-large screens */
+        font-size: 32px;
     }
 }

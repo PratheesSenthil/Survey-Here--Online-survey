@@ -1,45 +1,34 @@
-/* Default Styles (Mobile First) */
 .UseofPlatform, .User-gene, .privacy, .termination {
-   /* Adjusted for smaller screens */
-    margin-bottom: 5vh; /* Reduced margin for better spacing */
-    font-size: 15px; /* Smaller font size for mobile */
-    text-align: center; /* Center-align text for mobile */
+    margin-bottom: 5vh;
+    font-size: 15px;
+    text-align: center;
 }
-.tactit{
-    font-family:'Times New Roman', Times, serif;
+.tactit {
+    font-family: 'Times New Roman', Times, serif;
     margin-top: 20px;
-    /* margin-right: 20px; */
-    margin-left: px;
     margin-bottom: 40px;
     font-style: italic;
     font-weight: bold;
 }
-
-/* Tablet/Small Screen Adjustments */
 @media (min-width: 600px) {
     .UseofPlatform, .User-gene, .privacy, .termination {
-        margin-left: 4vw; /* Slightly increased margin for tablets */
-        margin-bottom: 6vh; /* Adjusted bottom margin */
-        font-size: 15px; /* Slightly larger font for tablets */
-        text-align: left; /* Left-align text for better readability on tablets */
+        margin-left: 4vw;
+        margin-bottom: 6vh;
+        font-size: 15px;
+        text-align: left;
     }
 }
-
-/* Desktop Adjustments */
 @media (min-width: 1024px) {
     .UseofPlatform, .User-gene, .privacy, .termination {
-        margin-left: 6vw; /* Adjusted margin for desktops */
-        margin-bottom: 7.5vh; /* Larger bottom margin for desktop */
-        font-size: 17px; 
-        text-align: left; /* Left-align text for better structure */
+        margin-left: 6vw;
+        margin-bottom: 7.5vh;
+        font-size: 17px;
+        text-align: left;
     }
 }
-
-/* Larger Screens / Extra Large Desktops */
 @media (min-width: 1440px) {
     .UseofPlatform, .User-gene, .privacy, .termination {
-        margin-left: 7.5vw; /* Increased left margin for larger screens */
-        margin-bottom: 5vh; /* Slightly larger margin for very large screens */
-         /* Larger font size for extra-large screens */
+        margin-left: 7.5vw;
+        margin-bottom: 5vh;
     }
 }

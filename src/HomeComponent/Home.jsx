@@ -1,16 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { useNavigate } from 'react-router-dom'; 
 import './Home.css';
 
 export default function Home() {
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
 
   const handleStartCreatingSurveys = () => {
-    navigate('/create-survey'); // Navigate to Create-Survey page
+    navigate('/create-survey'); 
   };
 
   const handleParticipateInSurveys = () => {
-    navigate('/Surveys'); // Navigate to Participate page
+    navigate('/Surveys'); 
   };
 
   return (
@@ -34,7 +34,6 @@ export default function Home() {
          </div>
         </div>
 
-        {/* Participate Section */}
         <div className="cta-section">
           <h2 >Want to Share Your Opinion?</h2>
           <p>
@@ -46,7 +45,6 @@ export default function Home() {
           </button>
         </div>
         
-        {/* Features Section */}
         <div className="features-section">
           <h2>Our Core Features</h2>
           <div className="features-grid">
@@ -65,8 +63,6 @@ export default function Home() {
           </div>
         </div>
 
-
-        {/* Call-to-Action Section */}
         <div className="cta-section">
           <h2>Join the Community of Professionals</h2>
           <p>
