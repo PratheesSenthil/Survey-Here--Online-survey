@@ -17,7 +17,7 @@ export default function ContactUs() {
          </div>
          <div>
           <h3><i class="bi bi-envelope-fill"></i>   Mail Us</h3>
-          <h3>onlinesurveyadmin@gmail.com</h3>
+          <h3>surveyheredmin@gmail.com</h3>
          </div>
          <div>
           <h3><i class="bi bi-building-fill"></i>   Communication Address</h3>

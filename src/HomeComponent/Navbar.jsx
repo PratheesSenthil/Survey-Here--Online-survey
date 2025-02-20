@@ -1,11 +1,16 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
-import { login } from '../SurveyComponent/SurveyList';
+// import { login } from '../SurveyComponent/SurveyList';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [login,setlogin]=useState("");
+  useEffect(()=>{
+    const log=JSON.parse(localStorage.getItem("logeduser"));
+    setlogin(log.uname);  
+  },[])
 
   return (
     <div className='nes'>
@@ -28,7 +33,7 @@ export default function Navbar() {
           <div className='user'>
             <p className='username' style={{ color: "bisque" }}>
               <i className="bi bi-person" style={{ fontSize: "20px", paddingRight: "4px" }}></i>
-              {login.username}
+              {login}
             </p>
           </div>
         
@@ -44,7 +49,7 @@ export default function Navbar() {
             <div className='user'>
               <p className='username'>
                 <i className="bi bi-person" style={{ fontSize: "20px", paddingRight: "4px" }}></i>
-                {login.username}
+                {login}
               </p>
             </div>
     

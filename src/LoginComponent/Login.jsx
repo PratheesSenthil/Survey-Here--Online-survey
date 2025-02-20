@@ -13,6 +13,7 @@ export default function Login() {
   const [errorEmail,seterrorEmail]= useState(null)
   const [errorpass,seterrorpass]= useState(null)
   const [errorname,seterrorname]= useState(null)
+  const [logeduser,setlogeduser]= useState({uname:"",pwd:""});
   const navigate = useNavigate();
   const[signup,setsignup]=useState(false)
   const sup=(event)=>{
@@ -41,14 +42,14 @@ export default function Login() {
     
     const checkusername= Signup.findIndex(user=>user.uname===username||user.emailId===username ) ;
     const checkuserpass= Signup.find(user=>user.userpass===password ) ;
-    console.log(checkusername);
-    console.log(checkuserpass);
+  
     
     
     if(checkusername>-1){
-      if(checkuserpass){
-        login.username=Signup[checkusername].uname;
-        login.pass=password;
+      if(checkuserpass){  
+        logeduser.uname=Signup[checkusername].uname;
+        logeduser.pwd=password;
+        localStorage.setItem("logeduser",JSON.stringify(logeduser))   
         navigate('/Home')
       }else{
         alert("Wrong Password ")
@@ -77,7 +78,7 @@ export default function Login() {
     console.log(modelEmail.test(newEmail))
     console.log(newpassword.length>7)
     console.log(newuser.length<9)
-    if(modelEmail.test(newEmail)&& (newpassword.length>7)&&(newuser.length<9)){
+    if(modelEmail.test(newEmail)&& (newpassword.length>7)&&(newuser.length<13)){
       seterrorEmail(null)
     const userfind=Signup.find(user => user.uname === newuser);
     const findemail=Signup.find(user=>user.emailId==newEmail);
@@ -115,8 +116,8 @@ export default function Login() {
     if(!(newpassword.length>7)){
       seterrorpass("Minimum 8 characters required.")
     }else{seterrorpass(null)}
-    if(!(newuser.length<9)){
-      seterrorname("Please enter a maximum of 15 characters")
+    if(!(newuser.length<13)){
+      seterrorname("Please enter a maximum of 13 characters")
     }else{seterrorname(null)}
   }
   }

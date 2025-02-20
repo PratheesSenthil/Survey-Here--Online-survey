@@ -182,6 +182,14 @@ body {
       opacity: 1;
     }
   }
+  @media (max-width:1420px){
+    .home-img{
+      display: none;
+    }
+    .hero-section{
+     padding-left: 190px;
+    }
+  }
   @media (max-width:1024px){
     .home-img{
       display: none;
